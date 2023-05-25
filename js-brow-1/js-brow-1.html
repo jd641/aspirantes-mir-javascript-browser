@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Convertidor a mayúsculas</title>
+  </head>
+  <body>
+    <label for="texto">Texto:</label>
+    <input type="text" id="texto">
+    <button type="button" name="button" id="button">Cambiar a mayúsculas</button>
+    <p id="resultado"></p>
+
+    <script type="text/javascript">
+      var input = document.getElementById('texto');
+      var resultado = document.getElementById('resultado');
+      var activador = document.getElementById('button');
+      var indexador = 0;
+
+      activador.addEventListener('click', function(){
+        if (indexador == 0) {
+          activador.innerHTML = "Cambiar a minúsculas"
+          var texto = input.value.toUpperCase();
+          resultado.textContent = texto;
+          indexador = 1;
+        }
+        else {
+          activador.innerHTML = "Cambiar a mayúsculas"
+          var texto = input.value.toLowerCase();
+          resultado.textContent = texto;
+          indexador = 0;
+        }
+      });
+    </script>
+  </body>
+</html>
